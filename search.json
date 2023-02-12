@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I made this site as my final project for Kane’s Free Data Science Bootcamp. I really enjoyed this course and I would recommend it to anyone who wants to learn more about data science."
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About",
+    "section": "About Me",
+    "text": "About Me\nGreetings, my name is Yash Dhore. I am a high school student who enjoys coding in my free time. I am learning java and R currently and hope to broaden my knowledge about programming languages.\nFeel free to contact me by email: yash@dhore.com\nQuestions, comments, and concerns about this project are welcome!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AP Exam Volume",
+    "section": "",
+    "text": "The volume of AP exams per year increased over time and is higher in larger states with more urban areas. The following data was pulled from the College Board Data Archive. Mapping data was then used to visualize the volume of AP exams by state from 2010 to 2020. Surprisingly, throughout the years, the top six states with highest AP exam volumes accounted for more than half of the nationwide exam volume.\nYou can hover the cursor over the states on the plot to display extra information. Note that the values displayed while hovering your cursor on the map do not update during animation if the cursor stays on the same state."
+  },
+  {
+    "objectID": "tab1.html",
+    "href": "tab1.html",
+    "title": "AP Program Participation",
+    "section": "",
+    "text": "This page contains four graphs that show the annual AP program participation from 1956 to 2020."
+  },
+  {
+    "objectID": "tab2.html",
+    "href": "tab2.html",
+    "title": "AP Program Participation (continued)",
+    "section": "",
+    "text": "This page contains four graphs that display the annual AP program participation by year along with a regression line.\nYou can hover the cursor over the points on the plot to display extra information."
+  },
+  {
+    "objectID": "tab3.html",
+    "href": "tab3.html",
+    "title": "Colleges and Universities",
+    "section": "",
+    "text": "These two plots display the top 25 colleges and universities in 2020. Ranking was determined by the total number of students that sent an AP score and the total number of AP scores the college or university received that year. A higher number of students or AP scores received corresponds with a higher ranking.\nYou can hover the cursor over the points on the plot to display extra information."
+  },
+  {
+    "objectID": "tab4.html",
+    "href": "tab4.html",
+    "title": "AP Exams",
+    "section": "",
+    "text": "This plot visualizes the 2020 AP exams by their mean score and the number of students who took the exam.\nYou can hover the cursor over the points on the plot to display extra information."
+  },
+  {
+    "objectID": "tab5.html",
+    "href": "tab5.html",
+    "title": "AP Scholar Awards",
+    "section": "",
+    "text": "This map shows the distribution of AP Scholar awards in the Untied States for the year 2020.\nYou can hover the cursor over the states on the plot to display extra information."
+  }
+]
