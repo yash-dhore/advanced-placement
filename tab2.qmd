@@ -94,7 +94,7 @@ ggplotly(stu_plot) |>
                                     "Number of Students taking AP Exams",
                                     "<br>",
                                     "<sup>",
-                                    " The number of schools has a polynomial-shaped growth pattern",
+                                    " The number of students has a polynomial-shaped growth pattern",
                                     "</sup>")),
          margin = list(l = 50, r = 50, b = 100, t = 50),
          annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
