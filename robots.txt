@@ -1,1 +1,1 @@
-Sitemap: https://quartopub.com/sites/yash-dhore/advanced-placement/sitemap.xml
+Sitemap: https://yash-dhore.github.io/advanced-placement/sitemap.xml

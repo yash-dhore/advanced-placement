@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "AP Exam Volume",
     "section": "",
-    "text": "The volume of AP exams per year increased over time and is higher in larger states with more urban areas. The following data was pulled from the College Board Data Archive. Mapping data was then used to visualize the volume of AP exams by state from 2010 to 2020. Surprisingly, throughout the years, the top six states with highest AP exam volumes accounted for more than half of the nationwide exam volume.\nYou can hover the cursor over the states on the plot to display extra information. Note that the values displayed while hovering your cursor on the map do not update during animation if the cursor stays on the same state."
+    "text": "The volume of AP exams per year increased over time and is higher in larger states with more urban areas. The following data was pulled from the College Board Data Archive. Mapping data was then used to visualize the volume of AP exams by state from 2010 to 2020. Surprisingly, throughout the years, the top six states with the highest AP exam volumes accounted for more than half of the nationwide exam volume.\nYou can hover the cursor over the states on the plot to display extra information. Note that the values displayed while hovering your cursor on the map do not update during animation if the cursor stays on the same state."
   },
   {
     "objectID": "tab1.html",
