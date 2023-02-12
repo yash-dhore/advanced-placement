@@ -1,0 +1,13 @@
+---
+title: "About"
+---
+
+## About this project
+I made this site as my final project for [Kane's Free Data Science Bootcamp](https://bootcamp.davidkane.info/). I really enjoyed this course and I would recommend it to anyone who wants to learn more about data science.
+
+## About Me
+Greetings, my name is Yash Dhore. I am a high school student who enjoys coding in my free time. I am learning java and R currently and hope to broaden my knowledge about programming languages.
+
+Feel free to contact me by email: yash@dhore.com
+
+Questions, comments, and concerns about this project are welcome!

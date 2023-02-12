@@ -1,0 +1,131 @@
+---
+title: "AP Program Participation (continued)"
+---
+
+This page contains four graphs that display the annual AP program participation by year along with a regression line.
+
+You can hover the cursor over the points on the plot to display extra information.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readxl)
+library(tidyverse)
+library(gganimate)
+library(gifski)
+library(dplyr)
+library(magick)
+library(ggthemes)
+library(ggplot2)
+library(plotly)
+
+ap_participation <- read_xls(path = "data/Annual-AP-Program-Participation-1956-2020_1.xls")
+
+colnames(ap_participation) <- c("Year", "Schools", "Students",
+                                "no data", "Exams", "Colleges")
+
+ap_participation = subset(ap_participation, select = c("Year", "Schools", "Students",
+                                                       "Exams", "Colleges"))
+
+ap_participation <- ap_participation[-c(1,2,50,51,70:76),]
+
+ap_participation <- ap_participation |>
+  mutate(Year = substring(Year, 1, 4))
+
+ap_participation$Year <- as.double(ap_participation$Year)
+ap_participation$Schools <- as.double(ap_participation$Schools)
+ap_participation$Students <- as.double(ap_participation$Students)
+ap_participation$Exams <- as.double(ap_participation$Exams)
+ap_participation$Colleges <- as.double(ap_participation$Colleges)
+
+ap_participation <- ap_participation |>
+  mutate(Year = Year + 1) |>
+    mutate(name = "")
+
+sch_plot <- ap_participation |>
+  ggplot(aes(x = Year, y = Schools)) +
+    geom_point(color = "red3") +
+      geom_smooth(method = "loess", formula = "y ~ x", se = FALSE, color = "black") +
+        labs(y = "Schools",
+             x = "Year") +
+          theme_minimal()
+
+stu_plot <- ap_participation |>
+  ggplot(aes(x = Year, y = Students)) +
+    geom_point(color = "darkgreen") +
+      geom_smooth(method = "loess", formula = "y ~ x", se = FALSE, color = "black") +
+        labs(y = "Students",
+             x = "Year") +
+          theme_minimal()
+
+exa_plot <- ap_participation |>
+  ggplot(aes(x = Year, y = Exams)) +
+    geom_point(color = "royalblue4") +
+      geom_smooth(method = "loess", formula = "y ~ x", se = FALSE, color = "black") +
+        labs(y = "Exams",
+             x = "Year") +
+          theme_minimal()
+
+col_plot <- ap_participation |>
+  ggplot(aes(x = Year, y = Colleges)) +
+    geom_point(color = "goldenrod2") +
+      geom_smooth(method = "loess", formula = "y ~ x", se = FALSE, color = "black") +
+        labs(y = "Colleges",
+             x = "Year") +
+          theme_minimal()
+
+ggplotly(sch_plot) |>
+  layout(title = list(text = paste0("<br>",
+                                    "Number of Schools offering AP Exams",
+                                    "<br>",
+                                    "<sup>",
+                                    " The number of schools has a power-shaped growth pattern",
+                                    "</sup>")),
+         margin = list(l = 50, r = 50, b = 100, t = 50),
+         annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
+                            xref='paper', yref='paper', showarrow = F, 
+                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            font = list(size = 13)))
+
+ggplotly(stu_plot) |>
+  layout(title = list(text = paste0("<br>",
+                                    "Number of Students taking AP Exams",
+                                    "<br>",
+                                    "<sup>",
+                                    " The number of schools has a polynomial-shaped growth pattern",
+                                    "</sup>")),
+         margin = list(l = 50, r = 50, b = 100, t = 50),
+         annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
+                            xref='paper', yref='paper', showarrow = F, 
+                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            font = list(size = 13)))
+
+ggplotly(exa_plot) |>
+  layout(title = list(text = paste0("<br>",
+                                    "Number of Exams administered AP",
+                                    "<br>",
+                                    "<sup>",
+                                    " The number of exams has a polynomial-shaped growth pattern",
+                                    "</sup>")),
+         margin = list(l = 50, r = 50, b = 100, t = 50),
+         annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
+                            xref='paper', yref='paper', showarrow = F, 
+                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            font = list(size = 13)))
+
+ggplotly(col_plot) |>
+  layout(title = list(text = paste0("<br>",
+                                    "Number of Colleges accepting AP Credit",
+                                    "<br>",
+                                    "<sup>",
+                                    " The number of colleges has a nearly-linear growth pattern",
+                                    "</sup>")),
+         margin = list(l = 50, r = 50, b = 100, t = 50),
+         annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
+                            xref='paper', yref='paper', showarrow = F, 
+                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            font = list(size = 13)))
+```
+

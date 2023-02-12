@@ -1,0 +1,34 @@
+project:
+  type: website
+
+website:
+  title: "Advanced Placement"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - sidebar:sources
+      
+  sidebar:
+    - id: sources
+      title: "More Pages"
+      style: "floating"
+      background: "#ffffff"
+      collapse-level: 2
+      contents:
+        - tab1.qmd
+        - tab2.qmd
+        - tab3.qmd
+        - tab4.qmd
+        - tab5.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

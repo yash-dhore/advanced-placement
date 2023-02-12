@@ -1,0 +1,17 @@
+---
+title: "AP Program Participation"
+---
+
+This page contains four graphs that show the annual AP program participation from 1956 to 2020.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(knitr)
+
+include_graphics("new1.gif")
+include_graphics("new2.gif")
+```
+
