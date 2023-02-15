@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Advanced Placement - About</title>
+<title>Advanced Placement - AP Exams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,6 +58,14 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -125,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">About</h1>
+      <h1 class="quarto-secondary-nav-title">AP Exams</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -160,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exams.html" class="sidebar-item-text sidebar-link">AP Exams</a>
+  <a href="./exams.html" class="sidebar-item-text sidebar-link active">AP Exams</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -173,22 +181,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-this-project" id="toc-about-this-project" class="nav-link active" data-scroll-target="#about-this-project">About this project</a></li>
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About Me</a></li>
-  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">About</h1>
+<h1 class="title d-none d-lg-block">AP Exams</h1>
 </div>
 
 
@@ -203,27 +203,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="about-this-project" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-project">About this project</h2>
-<p>I made this site as my final project for <a href="https://bootcamp.davidkane.info/">Kane’s Free Data Science Bootcamp</a>. I really enjoyed this course and I would recommend it to anyone who wants to learn more about data science.</p>
-</section>
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">About Me</h2>
-<p>Greetings, my name is Yash Dhore. I am a high school student who enjoys coding in my free time. I am learning java and R currently and hope to broaden my knowledge about programming languages.</p>
-<p>Feel free to contact me by email: yash@dhore.com</p>
-<p>Questions, comments, and concerns about this project are welcome!</p>
-</section>
-<section id="sources" class="level2">
-<h2 class="anchored" data-anchor-id="sources">Sources</h2>
-<p><a href="https://reports.collegeboard.org/media/pdf/ap-scholar-data-2020.pdf">College Board: AP Scholar Counts by State 2020</a></p>
-<p><a href="https://www.census.gov/newsroom/press-kits/2020/acs-1year.html">Census Bureau: American Community Survey 1-Year Data (2019)</a></p>
-<p><a href="https://reports.collegeboard.org/media/pdf/Annual-AP-Program-Participation-1956-2020_1.pdf">College Board: ANNUAL AP PROGRAM PARTICIPATION 1956-2020</a></p>
-<p><a href="https://reports.collegeboard.org/media/pdf/Top-Colleges-and-Universities-Receiving-the-Most-AP-Scores-2020_1.pdf">College Board: 200 Top Colleges &amp; AP Scores 2020</a></p>
-<p><a href="https://reports.collegeboard.org/media/pdf/Student-Score-Distributions-2020_1.pdf">College Board: AP Score Distributions by Subject 2020</a></p>
-<p><a href="https://reports.collegeboard.org/media/pdf/AP-Exam-Volume-by-Region-2010-2020_1.pdf">College Board: AP Exam Volume by Region (2010-2020)</a></p>
+<p>This plot visualizes the 2020 AP exams by their mean score and the number of students who took the exam. There appears to be a moderate negative correlation between the mean score of an AP exam and the number of students who took the exam.</p>
+<p>Note: You can hover the cursor over the points on the plot to display extra information.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5127a31fe6f7931a0511" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5127a31fe6f7931a0511">{"x":{"data":[{"x":[20486,36901,5281,23567,233444,266430,127864,145540,14663,70580,116751,122639,82415,535478,333980,162469,94312,21701,4928,22051,293196,218333,2518,2581,5850,16550,149488,21835,23655,51718,295621,20055,52562,168998,24137,187741,472697,302942],"y":[3.59,3.49,3.18,3.15,3.04,3.07,3.84,2.76,4.09,3.26,3.09,3.07,3.28,2.96,2.84,2.85,2.95,3.57,3.49,3.34,2.85,2.75,3.24,3.92,3.1,3.28,2.65,3.2,3.68,3.87,3.22,3.2,3.06,3.86,3.25,2.95,2.83,2.88],"text":["Exam: Art and Design: Drawing<br />Students:  20486<br />Mean: 3.59<br />SD: 0.90","Exam: Art and Design: 2-D<br />Students:  36901<br />Mean: 3.49<br />SD: 0.85","Exam: Art and Design: 3-D<br />Students:   5281<br />Mean: 3.18<br />SD: 0.96","Exam: Art History<br />Students:  23567<br />Mean: 3.15<br />SD: 1.21","Exam: Biology<br />Students: 233444<br />Mean: 3.04<br />SD: 1.06","Exam: Calculus AB<br />Students: 266430<br />Mean: 3.07<br />SD: 1.34","Exam: Calculus BC<br />Students: 127864<br />Mean: 3.84<br />SD: 1.25","Exam: Chemistry<br />Students: 145540<br />Mean: 2.76<br />SD: 1.26","Exam: Chinese Language (Total Group)<br />Students:  14663<br />Mean: 4.09<br />SD: 1.22","Exam: Computer Science A<br />Students:  70580<br />Mean: 3.26<br />SD: 1.40","Exam: Computer Science Principles<br />Students: 116751<br />Mean: 3.09<br />SD: 1.10","Exam: Economics - Macro<br />Students: 122639<br />Mean: 3.07<br />SD: 1.42","Exam: Economics - Micro<br />Students:  82415<br />Mean: 3.28<br />SD: 1.40","Exam: English Language<br />Students: 535478<br />Mean: 2.96<br />SD: 1.20","Exam: English Literature<br />Students: 333980<br />Mean: 2.84<br />SD: 1.13","Exam: Environmental Science<br />Students: 162469<br />Mean: 2.85<br />SD: 1.35","Exam: European History<br />Students:  94312<br />Mean: 2.95<br />SD: 1.22","Exam: French Language (Total Group)<br />Students:  21701<br />Mean: 3.57<br />SD: 1.11","Exam: German Language (Total Group)<br />Students:   4928<br />Mean: 3.49<br />SD: 1.23","Exam: Government & Politics  Comparative<br />Students:  22051<br />Mean: 3.34<br />SD: 1.34","Exam: Government & Politics United States<br />Students: 293196<br />Mean: 2.85<br />SD: 1.34","Exam: Human Geography<br />Students: 218333<br />Mean: 2.75<br />SD: 1.39","Exam: Italian Language (Total Group)<br />Students:   2518<br />Mean: 3.24<br />SD: 1.12","Exam: Japanese Language (Total Group)<br />Students:   2581<br />Mean: 3.92<br />SD: 1.35","Exam: Latin<br />Students:   5850<br />Mean: 3.10<br />SD: 1.25","Exam: Music Theory<br />Students:  16550<br />Mean: 3.28<br />SD: 1.29","Exam: Physics 1<br />Students: 149488<br />Mean: 2.65<br />SD: 1.25","Exam: Physics 2<br />Students:  21835<br />Mean: 3.20<br />SD: 1.09","Exam: Physics C E&M<br />Students:  23655<br />Mean: 3.68<br />SD: 1.38","Exam: Physics C Mechanics<br />Students:  51718<br />Mean: 3.87<br />SD: 1.23","Exam: Psychology<br />Students: 295621<br />Mean: 3.22<br />SD: 1.40","Exam: Research<br />Students:  20055<br />Mean: 3.20<br />SD: 0.99","Exam: Seminar<br />Students:  52562<br />Mean: 3.06<br />SD: 0.81","Exam: Spanish Language (Total Group)<br />Students: 168998<br />Mean: 3.86<br />SD: 0.99","Exam: Spanish Literature<br />Students:  24137<br />Mean: 3.25<br />SD: 1.10","Exam: Statistics<br />Students: 187741<br />Mean: 2.95<br />SD: 1.34","Exam: United States History<br />Students: 472697<br />Mean: 2.83<br />SD: 1.31","Exam: World History<br />Students: 302942<br />Mean: 2.88<br />SD: 1.18"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50,"r":50,"b":100,"l":50},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"AP Exams by Mean Score and Number of Students (2020)","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-24130,562126],"tickmode":"array","ticktext":["0","200,000","400,000"],"tickvals":[-3.63797880709171e-12,200000,400000],"categoryorder":"array","categoryarray":["0","200,000","400,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Number of Students","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2.578,4.162],"tickmode":"array","ticktext":["3.0","3.5","4.0"],"tickvals":[3,3.5,4],"categoryorder":"array","categoryarray":["3.0","3.5","4.0"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Mean Score","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative","annotations":[{"x":1,"y":-0.25,"text":"College Board: AP Score Distributions by Subject 2020","xref":"paper","yref":"paper","showarrow":false,"xanchor":"right","yanchor":"auto","xshift":0,"yshift":0,"font":{"size":12}}]},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"140ee04aab":{"Label":{},"x":{},"y":{},"Label2":{},"type":"scatter"}},"cur_data":"140ee04aab","visdat":{"140ee04aab":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
