@@ -14,45 +14,52 @@
     "text": "About Me\nGreetings, my name is Yash Dhore. I am a high school student who enjoys coding in my free time. I am learning java and R currently and hope to broaden my knowledge about programming languages.\nFeel free to contact me by email: yash@dhore.com\nQuestions, comments, and concerns about this project are welcome!"
   },
   {
+    "objectID": "about.html#sources",
+    "href": "about.html#sources",
+    "title": "About",
+    "section": "Sources",
+    "text": "Sources\nCollege Board: AP Exam Volume by Region (2010-2020)\nCollege Board: ANNUAL AP PROGRAM PARTICIPATION 1956-2020\nCollege Board: 200 Top Colleges & AP Scores 2020\nCollege Board: AP Score Distributions by Subject 2020\nCollege Board: AP Scholar Counts by State 2020"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "AP Exam Volume",
+    "title": "Number of People per AP Scholar Award by State",
     "section": "",
-    "text": "The volume of AP exams per year increased over time and is higher in larger states with more urban areas. The following data was pulled from the College Board Data Archive. Mapping data was then used to visualize the volume of AP exams by state from 2010 to 2020. Surprisingly, throughout the years, the top six states with the highest AP exam volumes accounted for more than half of the nationwide exam volume.\nYou can hover the cursor over the states on the plot to display extra information. Note that the values displayed while hovering your cursor on the map do not update during animation if the cursor stays on the same state."
+    "text": "The number of people per AP Scholar award varies tremendously by state. The number of AP Scholar awards was sourced from the AP Data Archive and the state populations was sourced from the American Community Survey 1-Year Data for 2019. The number of people per AP Scholar award for each state was found by dividing the state population by the total number of AP Scholar awards granted to students in that state. Rural states with lower populations tend to have a greater number of people per AP Scholar award.\nNote: You can hover the cursor over the states on the plot to display extra information."
   },
   {
     "objectID": "tab1.html",
     "href": "tab1.html",
     "title": "AP Program Participation",
     "section": "",
-    "text": "This page contains four graphs that show the annual AP program participation from 1956 to 2020."
+    "text": "This page contains four graphs that show the annual AP program participation from 1956 to 2020. By looking at these graphs, we can tell that the growth rate is similar for the number of schools that offer AP exams and the number of colleges that accept AP credit. Similarly, we can tell that the growth rate is similar for the number of students taking AP exams and the number of exams administered by AP."
   },
   {
     "objectID": "tab2.html",
     "href": "tab2.html",
     "title": "AP Program Participation (continued)",
     "section": "",
-    "text": "This page contains four graphs that display the annual AP program participation by year along with a regression line.\nYou can hover the cursor over the points on the plot to display extra information."
+    "text": "This page contains four graphs that display the annual AP program participation by year along with a regression line. Again, we can see that the number of schools offering AP exams and the number of colleges accepting AP credit have a similar growth rate, along with the number of students who took an AP exam and the number of exams administered by AP.\nNote: You can hover the cursor over the points on the plot to display extra information."
   },
   {
     "objectID": "tab3.html",
     "href": "tab3.html",
     "title": "Colleges and Universities",
     "section": "",
-    "text": "These two plots display the top 25 colleges and universities in 2020. Ranking was determined by the total number of students that sent an AP score and the total number of AP scores the college or university received that year. A higher number of students or AP scores received corresponds with a higher ranking.\nYou can hover the cursor over the points on the plot to display extra information."
+    "text": "These two plots display the top 25 colleges and universities in 2020. Ranking was determined by the total number of students that sent an AP score and the total number of AP scores the college or university received that year. A higher number of students or AP scores received corresponds with a higher ranking. Obviously, colleges and universities with a larger student body have a greater number of students that have sent an AP score and received a greater number of AP scores than smaller colleges and universities.\nNote: You can hover the cursor over the points on the plot to display extra information."
   },
   {
     "objectID": "tab4.html",
     "href": "tab4.html",
     "title": "AP Exams",
     "section": "",
-    "text": "This plot visualizes the 2020 AP exams by their mean score and the number of students who took the exam.\nYou can hover the cursor over the points on the plot to display extra information."
+    "text": "This plot visualizes the 2020 AP exams by their mean score and the number of students who took the exam. There appears to be a moderate negative correlation between the mean score of an AP exam and the number of students who took the exam.\nNote: You can hover the cursor over the points on the plot to display extra information."
   },
   {
     "objectID": "tab5.html",
     "href": "tab5.html",
-    "title": "AP Scholar Awards",
+    "title": "AP Exam Volume",
     "section": "",
-    "text": "This map shows the distribution of AP Scholar awards in the Untied States for the year 2020.\nYou can hover the cursor over the states on the plot to display extra information."
+    "text": "The volume of AP exams per year increased over time and is higher in states with larger populations. The following data was pulled from the College Board Data Archive. Mapping data was then used to visualize the volume of AP exams by state from 2010 to 2020. Surprisingly, throughout the years, the top six states with the highest AP exam volumes accounted for more than half of the nationwide exam volume.\nNote: You can hover the cursor over the states on the plot to display extra information. Bear in mind that the values displayed while hovering your cursor on the map do not update during animation if the cursor stays in the same location. You can move your cursor within the state and the values will display during animation."
   }
 ]
