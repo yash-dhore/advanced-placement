@@ -2,9 +2,10 @@
 title: "AP Program Participation (continued)"
 ---
 
-This page contains four graphs that display the annual AP program participation by year along with a regression line.
+This page contains four graphs that display the annual AP program participation by year along with a regression line. Again, we can see that the
+number of schools offering AP exams and the number of colleges accepting AP credit have a similar growth rate, along with the number of students who took an AP exam and the number of exams administered by AP.
 
-You can hover the cursor over the points on the plot to display extra information.
+Note: You can hover the cursor over the points on the plot to display extra information.
 
 ```{r}
 #| echo: false
@@ -12,38 +13,42 @@ You can hover the cursor over the points on the plot to display extra informatio
 #| warning: false
 
 library(readxl)
-library(tidyverse)
-library(gganimate)
-library(gifski)
-library(dplyr)
-library(magick)
-library(ggthemes)
-library(ggplot2)
 library(plotly)
+
+# Note: Comments up until line 56 are the same in 'gif-creation.R'
 
 ap_participation <- read_xls(path = "data/Annual-AP-Program-Participation-1956-2020_1.xls")
 
+# Modified column names because they were '...1', '...2', etc
 colnames(ap_participation) <- c("Year", "Schools", "Students",
                                 "no data", "Exams", "Colleges")
 
+# Selected needed columns since 'no data' was just empty
 ap_participation = subset(ap_participation, select = c("Year", "Schools", "Students",
                                                        "Exams", "Colleges"))
 
+# Kept only rows that contain data, got rid of empty rows and rows with text
 ap_participation <- ap_participation[-c(1,2,50,51,70:76),]
 
+# Changed 'year' rows from something like '1955-56' to '1955' so I could plot the year in an organized
+# manner without too much clutter. Later, I will add 1 to each row in 'year' to get the year the exams were taken.
+# This is because the exams are given in May, at the end of the school year, and the original data included the whole school year.
 ap_participation <- ap_participation |>
   mutate(Year = substring(Year, 1, 4))
 
+# Changed the data types of the rows from chr to dbl, so the graphs function properly and so I can add 1 to 'year'
 ap_participation$Year <- as.double(ap_participation$Year)
 ap_participation$Schools <- as.double(ap_participation$Schools)
 ap_participation$Students <- as.double(ap_participation$Students)
 ap_participation$Exams <- as.double(ap_participation$Exams)
 ap_participation$Colleges <- as.double(ap_participation$Colleges)
 
+# This is where I added 1 to all the rows in 'year' (explanation on line 40-41)
 ap_participation <- ap_participation |>
-  mutate(Year = Year + 1) |>
-    mutate(name = "")
+  mutate(Year = Year + 1)
 
+# Creation of four individual plots
+# sch for schools, stu for students, exa for exams, & col for colleges
 sch_plot <- ap_participation |>
   ggplot(aes(x = Year, y = Schools)) +
     geom_point(color = "red3") +
@@ -76,6 +81,7 @@ col_plot <- ap_participation |>
              x = "Year") +
           theme_minimal()
 
+# Finishing the plots by making them interactive, reformatting, and adding text
 ggplotly(sch_plot) |>
   layout(title = list(text = paste0("<br>",
                                     "Number of Schools offering AP Exams",
@@ -85,8 +91,8 @@ ggplotly(sch_plot) |>
                                     "</sup>")),
          margin = list(l = 50, r = 50, b = 100, t = 50),
          annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
-                            xref='paper', yref='paper', showarrow = F, 
-                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            xref = 'paper', yref = 'paper', showarrow = F, 
+                            xanchor = 'right', yanchor = 'auto', xshift = 0, yshift = 0,
                             font = list(size = 13)))
 
 ggplotly(stu_plot) |>
@@ -98,8 +104,8 @@ ggplotly(stu_plot) |>
                                     "</sup>")),
          margin = list(l = 50, r = 50, b = 100, t = 50),
          annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
-                            xref='paper', yref='paper', showarrow = F, 
-                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            xref = 'paper', yref = 'paper', showarrow = F, 
+                            xanchor = 'right', yanchor = 'auto', xshift = 0, yshift = 0,
                             font = list(size = 13)))
 
 ggplotly(exa_plot) |>
@@ -111,8 +117,8 @@ ggplotly(exa_plot) |>
                                     "</sup>")),
          margin = list(l = 50, r = 50, b = 100, t = 50),
          annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
-                            xref='paper', yref='paper', showarrow = F, 
-                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            xref = 'paper', yref = 'paper', showarrow = F, 
+                            xanchor = 'right', yanchor = 'auto', xshift=0, yshift=0,
                             font = list(size = 13)))
 
 ggplotly(col_plot) |>
@@ -124,8 +130,8 @@ ggplotly(col_plot) |>
                                     "</sup>")),
          margin = list(l = 50, r = 50, b = 100, t = 50),
          annotations = list(x = 1, y = -0.3, text = "College Board: Annual AP Program Participation 1956-2020",
-                            xref='paper', yref='paper', showarrow = F, 
-                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            xref = 'paper', yref = 'paper', showarrow = F, 
+                            xanchor = 'right', yanchor = 'auto', xshift = 0, yshift = 0,
                             font = list(size = 13)))
 ```
 

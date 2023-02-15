@@ -2,9 +2,9 @@
 title: "Colleges and Universities"
 ---
 
-These two plots display the top 25 colleges and universities in 2020. Ranking was determined by the total number of students that sent an AP score and the total number of AP scores the college or university received that year. A higher number of students or AP scores received corresponds with a higher ranking.
+These two plots display the top 25 colleges and universities in 2020. Ranking was determined by the total number of students that sent an AP score and the total number of AP scores the college or university received that year. A higher number of students or AP scores received corresponds with a higher ranking. Obviously, colleges and universities with a larger student body have a greater number of students that have sent an AP score and received a greater number of AP scores than smaller colleges and universities.
 
-You can hover the cursor over the points on the plot to display extra information.
+Note: You can hover the cursor over the points on the plot to display extra information.
 
 ```{r}
 #| echo: false
@@ -12,30 +12,30 @@ You can hover the cursor over the points on the plot to display extra informatio
 #| warning: false
 
 library(readxl)
-library(tidyverse)
-library(gganimate)
-library(gifski)
-library(dplyr)
-library(magick)
-library(ggthemes)
-library(ggplot2)
 library(plotly)
 
 top_colleges_by_ap <- read_xls(path = "data/Top-Colleges-and-Universities-Receiving-the-Most-AP-Scores-2020_1.xls")
 
+# Selecting only the top 25 colleges because that is what I want to visualize
+# Row 1 is text so it was excluded
 top_colleges_by_ap <- top_colleges_by_ap[2:26,]
 
+# Changing column names because they appear as '...1', '...2', etc
 colnames(top_colleges_by_ap) <- c("Ranking", "College or University", "Scores", "Students")
 
+# Selecting only the columns I want; data is formatted somewhat strangely so there is data for multiple colleges in 1 row
 top_colleges_by_ap = subset(top_colleges_by_ap, select = c("Ranking", "College or University", "Scores", "Students"))
 
+# Removing the '.' in 'Ranking' rows ('1.' changes to '1') so I can convert the row data type to double
 top_colleges_by_ap <- top_colleges_by_ap |>
   mutate(Ranking = substring(Ranking, 1, nchar(Ranking) - 1))
 
+# Changing column types so plots function properly
 top_colleges_by_ap$Ranking <- as.double(top_colleges_by_ap$Ranking)
 top_colleges_by_ap$Scores <- as.double(top_colleges_by_ap$Scores)
 top_colleges_by_ap$Students <- as.double(top_colleges_by_ap$Students)
 
+# Creation of the two plots
 col_stu_plot <- top_colleges_by_ap |>
   ggplot(aes(label = `College or University`)) +
     geom_point(aes(x = Ranking, y = Students)) +
@@ -52,6 +52,7 @@ col_exa_plot <- top_colleges_by_ap |>
              x = "Ranking",
              y = "Scores")
 
+# Finishing up plots by adding interactive element with ggplotly() and adding text
 ggplotly(col_stu_plot) |>
   layout(margin = list(l = 50, r = 50, b = 100, t = 50),
          annotations = list(x = 1, y = -0.3, text = "College Board: 200 Top Colleges & AP Scores 2020",
@@ -65,5 +66,4 @@ ggplotly(col_exa_plot) |>
                             xref = 'paper', yref = 'paper', showarrow = F, 
                             xanchor = 'right', yanchor = 'auto', xshift = 0, yshift = 0,
                             font = list(size = 12)))
-
 ```

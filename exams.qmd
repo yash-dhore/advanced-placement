@@ -1,0 +1,49 @@
+---
+title: "AP Exams"
+---
+
+This plot visualizes the 2020 AP exams by their mean score and the number of students who took the exam. There appears to be a moderate negative correlation between the mean score of an AP exam and the number of students who took the exam.
+
+Note: You can hover the cursor over the points on the plot to display extra information.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readxl)
+library(plotly)
+
+# "Reformatted" in Google Spreadsheets, seemed too arduous and pointless to do it in R
+# Reason: the data is not presented in a manner that I currently know how to wrangle
+score_dist <- read_xlsx(path = "data/Reformatted-Student-Score-Distributions-2020_1.xlsx")
+
+# Changing SD (Standard Deviation) column to double because it contains numbers
+score_dist$SD <- as.double(score_dist$SD)
+
+# 'Students': Finding total number of students by adding the number of 1s through 5s (1-5 is the scale on AP tests)
+# 'Percent of Threes or Higher': Finding the percent of 3s or higher on the exams
+# You may be asking, "Why 3s or higher?" 3 is usually the cutoff to be able to get credit for classes in college)
+score_dist <- score_dist |>
+  mutate(Students = Fives + Fours + Threes + Twos + Ones,
+         `Percent of Threes or Higher` = (Fives + Fours + Threes) / Students)
+
+# Creation of the plot, use of labels ('Label' and 'Label2') to be able to display the
+# values of the variables ('Exam' and 'SD') while hovering on the points on the graph
+score_dist <- score_dist |>
+  ggplot(aes(Label = Exam)) +
+    geom_point(aes(x = Students, y = Mean, Label2 = SD)) +
+      theme_minimal() +
+        scale_x_continuous(labels = scales::comma) +
+          labs(title = "AP Exams by Mean Score and Number of Students (2020)",
+               y = "Mean Score",
+               x = "Number of Students")
+
+# Added interactive element and text
+ggplotly(score_dist) |>
+  layout(margin = list(l = 50, r = 50, b = 100, t = 50),
+         annotations = list(x = 1, y = -0.25, text = "College Board: AP Score Distributions by Subject 2020",
+                            xref = 'paper', yref = 'paper', showarrow = F, 
+                            xanchor = 'right', yanchor = 'auto', xshift = 0, yshift = 0,
+                            font = list(size = 12)))
+```

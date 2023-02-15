@@ -11,3 +11,17 @@ Greetings, my name is Yash Dhore. I am a high school student who enjoys coding i
 Feel free to contact me by email: yash@dhore.com
 
 Questions, comments, and concerns about this project are welcome!
+
+## Sources
+
+[College Board: AP Scholar Counts by State 2020](https://reports.collegeboard.org/media/pdf/ap-scholar-data-2020.pdf)
+
+[Census Bureau: American Community Survey 1-Year Data (2019)](https://www.census.gov/newsroom/press-kits/2020/acs-1year.html)
+
+[College Board: ANNUAL AP PROGRAM PARTICIPATION 1956-2020](https://reports.collegeboard.org/media/pdf/Annual-AP-Program-Participation-1956-2020_1.pdf)
+
+[College Board: 200 Top Colleges & AP Scores 2020](https://reports.collegeboard.org/media/pdf/Top-Colleges-and-Universities-Receiving-the-Most-AP-Scores-2020_1.pdf)
+
+[College Board: AP Score Distributions by Subject 2020](https://reports.collegeboard.org/media/pdf/Student-Score-Distributions-2020_1.pdf)
+
+[College Board: AP Exam Volume by Region (2010-2020)](https://reports.collegeboard.org/media/pdf/AP-Exam-Volume-by-Region-2010-2020_1.pdf)

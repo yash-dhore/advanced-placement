@@ -1,0 +1,34 @@
+---
+title: "AP Exam Volume"
+---
+
+The volume of AP exams per year increased over time and is higher in states with larger populations. The following data was pulled from the College Board Data Archive. Mapping data was then used to visualize the volume of AP exams by state from 2010 to 2020. Surprisingly, throughout the years, the top six states with the highest AP exam volumes accounted for more than half of the nationwide exam volume. 
+
+Note: You can hover the cursor over the states on the plot to display extra information. Bear in mind that the values displayed while hovering your cursor on the map do not update during animation if the cursor stays in the same location. You can move your cursor within the state and the values will display during animation. 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readxl)
+library(plotly)
+
+# "Reformatted" in Google Spreadsheets, seemed too arduous and pointless to do it in R
+# Reason: the data is not presented in a manner that I currently know how to wrangle
+ap_exam_volume <- read_xlsx(path = "data/Reformatted-AP-Exam-Volume-by-Region-2010-2020_1.xlsx")
+
+# Creation and formatting of plot, added text
+volume_by_state <- ap_exam_volume |>
+  plot_geo(locations = state.abb, locationmode = 'USA-states') |>
+    add_trace(z = ap_exam_volume$Volume, locations = ap_exam_volume$state,
+              frame= ~Year, colors = "Blues") |>
+      layout(geo = list(scope = 'usa'),
+           title = "\nAP Exam Volume by State (2010-2020)") |>
+        add_annotations(yref = 'paper', xref = "paper", y = -0.1, x = 1.15,
+                        text = "College Board: AP Exam Volume by Region (2010-2020)", showarrow = F) |>
+          add_annotations(yref = 'paper', xref = "paper", y = 1.03, x = 1.1,
+                    text = "Volume", showarrow = F)
+
+volume_by_state
+```

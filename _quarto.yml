@@ -18,11 +18,12 @@ website:
       background: "#ffffff"
       collapse-level: 2
       contents:
-        - tab1.qmd
-        - tab2.qmd
-        - tab3.qmd
-        - tab4.qmd
-        - tab5.qmd
+        - index.qmd
+        - participation-animation.qmd
+        - participation-graphs.qmd
+        - colleges-and-universities.qmd
+        - exams.qmd
+        - volume.qmd
 
 format:
   html:
