@@ -27,7 +27,7 @@ volume_by_state <- ap_exam_volume |>
            title = "\nAP Exam Volume by State (2010-2020)") |>
         add_annotations(yref = 'paper', xref = "paper", y = -0.1, x = 1.15,
                         text = "College Board: AP Exam Volume by Region (2010-2020)", showarrow = F) |>
-          add_annotations(yref = 'paper', xref = "paper", y = 1.03, x = 1.1,
+          add_annotations(yref = 'paper', xref = "paper", y = 1.03, x = 1.103,
                     text = "Volume", showarrow = F)
 
 volume_by_state

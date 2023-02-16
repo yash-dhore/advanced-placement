@@ -1,11 +1,10 @@
 ---
-title: "Number of People per AP Scholar Award by State"
+title: "AP Scholar Awards Per Capita"
 ---
 
-The number of people per AP Scholar award varies tremendously by state. The number of AP Scholar awards was sourced from the AP Data Archive and the state populations was sourced from the American Community Survey 1-Year Data for 2019. The number of people per AP Scholar award for each state was found by dividing the state population by the total number of AP Scholar awards granted to students in that state. Rural states with lower populations tend to have a greater number of people per AP Scholar award.
+AP Scholar Awards are academic distinctions given to students who have received high scores on multiple Advanced Placement (AP) exams. The number of AP Scholar Awards was sourced from the AP Data Archive and the state populations was sourced from the American Community Survey 1-Year Data for 2019. There are many types of AP Scholar Awards and the quantity of each award is presented in the AP Scholar Awards data, but only the total number of awards was utilized in the map below. Rural states with lower populations tend to have a lower number of AP Scholar Awards per capita.
 
 Note: You can hover the cursor over the states on the plot to display extra information.
-
 
 ```{r}
 #| echo: false
@@ -17,6 +16,10 @@ library(plotly)
 library(dplyr)
 library(tidycensus)
 library(scales)
+
+# Using data from 2019 not 2020 (current latest release as of February 15, 2023 because
+# ACS 1-year data is not available for 2020 due to their data collection method
+# being very different due to the pandemic
 
 # Getting state population from the year 2019 and selecting needed columns
 pop_by_state <- get_acs(geography = "state",
@@ -75,30 +78,32 @@ ap_scholars$State <- c("AK", "AL", "AR", "AZ", "CA", "CO", "CT",
 # Adding population column so I can potentially find something interesting o_O
 ap_scholars <- left_join(ap_scholars, pop_by_state)
 
-# Diving state population by the total number of AP Scholar awards in that state
+
+# Finding the number of 100,000s in each state so I can find the number of awards per 100,000 people in each state
 # This is what what I want to plot, seems interesting
 ap_scholars <- ap_scholars |>
-  mutate(`People per award` = Population / `Total Scholar Awards`)
+  mutate(`Number of 100,000s` = Population / 100000) |>
+    mutate(`Awards per 100,000 People` = `Total Scholar Awards` / `Number of 100,000s`)
 
 # Rounding the numbers to integers because they had a lot of decimal places and
 # the numbers themselves are high enough that the decimal won't change much
-ap_scholars$`People per award` <- round(ap_scholars$`People per award`, 0)
+ap_scholars$`Awards per 100,000 People` <- round(ap_scholars$`Awards per 100,000 People`, 0)
 
 # Creation of plot, changed color scale, added hovertext to display extra information while hovering over a state
 # Finished plot by adding title and caption
 plot_ly(type = "choropleth",
         locations = ap_scholars$State,
         locationmode = "USA-states",
-        z = ap_scholars$`People per award`,
+        z = ap_scholars$`Awards per 100,000 People`,
         colors = 'YlOrBr',
         hoverinfo = "text",
-        hovertext = paste("People per award:", label_comma()(ap_scholars$`People per award`),
+        hovertext = paste("AP Scholar Awards Per Capita:", label_comma()(ap_scholars$`Awards per 100,000 People`),
                           "\nTotal Scholar Awards:", label_comma()(ap_scholars$`Total Scholar Awards`),
                           "\nPopulation:", label_comma()(ap_scholars$Population))) |>
   layout(geo = list(scope = "usa"),
-         title = "Number of People per AP Scholar Award by State (2019)",
-         annotations = list(yref = 'paper', xref = "paper", y = 1.025, x = 1.15,
-                            text = "People per award", showarrow = F)) |>
+         title = "Number of AP Scholar Awards per 100,000 People by State (2019)",
+         annotations = list(yref = 'paper', xref = "paper", y = 1.02, x = 1.15,
+                            text = "Awards Per Capita", showarrow = F)) |>
     add_annotations(yref = 'paper', xref = "paper", y = -0.07, x = 1.44,
                     text = "College Board: AP Scholar Counts by State 2019
                     Census Bureau: American Community Survey 1-Year Data (2019)                                           ",
