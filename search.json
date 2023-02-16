@@ -4,21 +4,21 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I made this site as my final project for Kane’s Free Data Science Bootcamp. I really enjoyed this course and I would recommend it to anyone who wants to learn more about data science."
+    "text": "I made this site as my final project for Kane’s Free Data Science Bootcamp. I really enjoyed this course (it’s free!) and I would recommend it to anyone who wants to learn more about data science."
   },
   {
     "objectID": "about.html#about-me",
     "href": "about.html#about-me",
     "title": "About",
     "section": "About Me",
-    "text": "About Me\nGreetings, my name is Yash Dhore. I am a high school student who enjoys coding in my free time. I am learning java and R currently and hope to broaden my knowledge about programming languages.\nFeel free to contact me by email: yash@dhore.com\nQuestions, comments, and concerns about this project are welcome!"
+    "text": "About Me\nGreetings, my name is Yash Dhore. I am a high school student who enjoys coding in my free time. I am learning java and R currently and hope to broaden my knowledge about programming languages.\nHere’s my GitHub repo: https://github.com/yash-dhore/advanced-placement\nFeel free to contact me by email: yash@dhore.com\nQuestions, comments, and concerns about this project are welcome!"
   },
   {
     "objectID": "about.html#sources",
     "href": "about.html#sources",
     "title": "About",
     "section": "Sources",
-    "text": "Sources\nCollege Board: AP Scholar Counts by State 2020\nCensus Bureau: American Community Survey 1-Year Data (2019)\nCollege Board: ANNUAL AP PROGRAM PARTICIPATION 1956-2020\nCollege Board: 200 Top Colleges & AP Scores 2020\nCollege Board: AP Score Distributions by Subject 2020\nCollege Board: AP Exam Volume by Region (2010-2020)"
+    "text": "Sources\nCollege Board: AP Scholar Counts by State 2019\nCensus Bureau: American Community Survey 1-Year Data (2019)\nCollege Board: ANNUAL AP PROGRAM PARTICIPATION 1956-2020\nCollege Board: 200 Top Colleges & AP Scores 2020\nCollege Board: AP Score Distributions by Subject 2020\nCollege Board: AP Exam Volume by Region (2010-2020)"
   },
   {
     "objectID": "colleges-and-universities.html",
@@ -37,9 +37,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Number of People per AP Scholar Award by State",
+    "title": "AP Scholar Awards Per Capita",
     "section": "",
-    "text": "The number of people per AP Scholar award varies tremendously by state. The number of AP Scholar awards was sourced from the AP Data Archive and the state populations was sourced from the American Community Survey 1-Year Data for 2019. The number of people per AP Scholar award for each state was found by dividing the state population by the total number of AP Scholar awards granted to students in that state. Rural states with lower populations tend to have a greater number of people per AP Scholar award.\nNote: You can hover the cursor over the states on the plot to display extra information."
+    "text": "AP Scholar Awards are academic distinctions given to students who have received high scores on multiple Advanced Placement (AP) exams, which are administered by the College Board, who also administers the SAT, a standardized test in the United States. The number of AP Scholar awards was sourced from the AP Data Archive and the state populations was sourced from the American Community Survey 1-Year Data for 2019. Then, the relevant data frames were joined to analyze the number of AP Scholar awards per 100,000 people in each state. Rural states with lower populations tend to have a lower number of AP Scholar Awards per capita.\nNote: You can hover the cursor over the states on the plot to display extra information."
   },
   {
     "objectID": "participation-animation.html",
