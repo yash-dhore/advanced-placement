@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "AP Scholar Awards Per Capita",
     "section": "",
-    "text": "AP Scholar Awards are academic distinctions given to students who have received high scores on multiple Advanced Placement (AP) exams, which are administered by the College Board, who also administers the SAT, a standardized test in the United States. The number of AP Scholar awards was sourced from the AP Data Archive and the state populations was sourced from the American Community Survey 1-Year Data for 2019. Then, the relevant data frames were joined to analyze the number of AP Scholar awards per 100,000 people in each state. Rural states with lower populations tend to have a lower number of AP Scholar Awards per capita.\nNote: You can hover the cursor over the states on the plot to display extra information."
+    "text": "AP Scholar Awards are academic distinctions given to students who have received high scores on multiple Advanced Placement (AP) exams. The number of AP Scholar Awards was sourced from the AP Data Archive and the state populations was sourced from the American Community Survey 1-Year Data for 2019. There are many types of AP Scholar Awards and the quantity of each award is presented in the AP Scholar Awards data, but only the total number of awards was utilized in the map below. Rural states with lower populations tend to have a lower number of AP Scholar Awards per capita.\nNote: You can hover the cursor over the states on the plot to display extra information."
   },
   {
     "objectID": "participation-animation.html",
